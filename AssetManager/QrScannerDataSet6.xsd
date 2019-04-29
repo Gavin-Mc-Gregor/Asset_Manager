@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QrScannerDataSet6" targetNamespace="http://tempuri.org/QrScannerDataSet6.xsd" xmlns:mstns="http://tempuri.org/QrScannerDataSet6.xsd" xmlns="http://tempuri.org/QrScannerDataSet6.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QrScannerConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QrScannerConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AssetManager.Properties.Settings.GlobalReference.Default.QrScannerConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="view_GetItemsTableAdapter" GeneratorDataComponentClassName="view_GetItemsTableAdapter" Name="view_GetItems" UserDataComponentName="view_GetItemsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QrScannerConnectionString (Settings)" DbObjectName="QrScanner.dbo.view_GetItems" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IT_Type, IT_Description, IT_Price, I_Availability FROM dbo.view_GetItems</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IT_Type" DataSetColumn="IT_Type" />
+              <Mapping SourceColumn="IT_Description" DataSetColumn="IT_Description" />
+              <Mapping SourceColumn="IT_Price" DataSetColumn="IT_Price" />
+              <Mapping SourceColumn="I_Availability" DataSetColumn="I_Availability" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QrScannerDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QrScannerDataSet6" msprop:Generator_UserDSName="QrScannerDataSet6">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="view_GetItems" msprop:Generator_TableClassName="view_GetItemsDataTable" msprop:Generator_TableVarName="tableview_GetItems" msprop:Generator_TablePropName="view_GetItems" msprop:Generator_RowDeletingName="view_GetItemsRowDeleting" msprop:Generator_RowChangingName="view_GetItemsRowChanging" msprop:Generator_RowEvHandlerName="view_GetItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="view_GetItemsRowDeleted" msprop:Generator_UserTableName="view_GetItems" msprop:Generator_RowChangedName="view_GetItemsRowChanged" msprop:Generator_RowEvArgName="view_GetItemsRowChangeEvent" msprop:Generator_RowClassName="view_GetItemsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IT_Type" msprop:Generator_ColumnVarNameInTable="columnIT_Type" msprop:Generator_ColumnPropNameInRow="IT_Type" msprop:Generator_ColumnPropNameInTable="IT_TypeColumn" msprop:Generator_UserColumnName="IT_Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IT_Description" msprop:Generator_ColumnVarNameInTable="columnIT_Description" msprop:Generator_ColumnPropNameInRow="IT_Description" msprop:Generator_ColumnPropNameInTable="IT_DescriptionColumn" msprop:Generator_UserColumnName="IT_Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IT_Price" msprop:Generator_ColumnVarNameInTable="columnIT_Price" msprop:Generator_ColumnPropNameInRow="IT_Price" msprop:Generator_ColumnPropNameInTable="IT_PriceColumn" msprop:Generator_UserColumnName="IT_Price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="I_Availability" msprop:Generator_ColumnVarNameInTable="columnI_Availability" msprop:Generator_ColumnPropNameInRow="I_Availability" msprop:Generator_ColumnPropNameInTable="I_AvailabilityColumn" msprop:Generator_UserColumnName="I_Availability" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

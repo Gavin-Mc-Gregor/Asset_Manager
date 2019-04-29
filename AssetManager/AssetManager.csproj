@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1D117C6-0CB6-4E8D-8CAC-16A4C2AF5AAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AssetManager</RootNamespace>
+    <AssemblyName>AssetManager</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BingMapsRESTToolkit, Version=1.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BingMapsRESTToolkit.1.1.4\lib\net45\BingMapsRESTToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.9.2.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Windows.1.9.2\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.9.2.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Windows.1.9.2\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=1.9.2.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.Windows.1.9.2\lib\net40\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.110.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.110.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.110.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address\frmAddAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Address\frmAddAddress.Designer.cs">
+      <DependentUpon>frmAddAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Address\CAddress.cs" />
+    <Compile Include="Booking\CBooking.cs" />
+    <Compile Include="CBookingInstance.cs" />
+    <Compile Include="Customer\CCustomer.cs" />
+    <Compile Include="Customer\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Address\frmSelectAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Address\frmSelectAddress.Designer.cs">
+      <DependentUpon>frmSelectAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewAddress.Designer.cs">
+      <DependentUpon>frmNewAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewCustomer.Designer.cs">
+      <DependentUpon>frmNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelectCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectCustomer.Designer.cs">
+      <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item\CItem.cs" />
+    <Compile Include="Item\CItemType.cs" />
+    <Compile Include="Item\frmSelectItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\frmSelectItem.Designer.cs">
+      <DependentUpon>frmSelectItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\CLogin.cs" />
+    <Compile Include="Connection\CConnection.cs" />
+    <Compile Include="QrScannerDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet19.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SelectAddressDataSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectAddressDataSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Users\CUser.cs" />
+    <Compile Include="Users\CUserType.cs" />
+    <Compile Include="Item\frmItemType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item\frmItemType.Designer.cs">
+      <DependentUpon>frmItemType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUserType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserType.Designer.cs">
+      <DependentUpon>frmUserType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QrScannerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet141.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet141.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QrScannerDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QrScannerDataSet9.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Address\frmAddAddress.resx">
+      <DependentUpon>frmAddAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Address\frmSelectAddress.resx">
+      <DependentUpon>frmSelectAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewAddress.resx">
+      <DependentUpon>frmNewAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewCustomer.resx">
+      <DependentUpon>frmNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectCustomer.resx">
+      <DependentUpon>frmSelectCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\frmItemType.resx">
+      <DependentUpon>frmItemType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item\frmSelectItem.resx">
+      <DependentUpon>frmSelectItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserType.resx">
+      <DependentUpon>frmUserType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QrScannerDataSet.xsc">
+      <DependentUpon>QrScannerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet.xss">
+      <DependentUpon>QrScannerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet1.xsc">
+      <DependentUpon>QrScannerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet1.xss">
+      <DependentUpon>QrScannerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet10.xsc">
+      <DependentUpon>QrScannerDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet10.xss">
+      <DependentUpon>QrScannerDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet11.xsc">
+      <DependentUpon>QrScannerDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet11.xss">
+      <DependentUpon>QrScannerDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet12.xsc">
+      <DependentUpon>QrScannerDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet12.xss">
+      <DependentUpon>QrScannerDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet13.xsc">
+      <DependentUpon>QrScannerDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet13.xss">
+      <DependentUpon>QrScannerDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet141.xsc">
+      <DependentUpon>QrScannerDataSet141.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet141.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet141.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet141.xss">
+      <DependentUpon>QrScannerDataSet141.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet15.xsc">
+      <DependentUpon>QrScannerDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet15.xss">
+      <DependentUpon>QrScannerDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet16.xsc">
+      <DependentUpon>QrScannerDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet16.xss">
+      <DependentUpon>QrScannerDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet17.xsc">
+      <DependentUpon>QrScannerDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet17.xss">
+      <DependentUpon>QrScannerDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet18.xsc">
+      <DependentUpon>QrScannerDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet18.xss">
+      <DependentUpon>QrScannerDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet19.xsc">
+      <DependentUpon>QrScannerDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet19.xss">
+      <DependentUpon>QrScannerDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet2.xsc">
+      <DependentUpon>QrScannerDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet2.xss">
+      <DependentUpon>QrScannerDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet3.xsc">
+      <DependentUpon>QrScannerDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet3.xss">
+      <DependentUpon>QrScannerDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet4.xsc">
+      <DependentUpon>QrScannerDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet4.xss">
+      <DependentUpon>QrScannerDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet5.xsc">
+      <DependentUpon>QrScannerDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet5.xss">
+      <DependentUpon>QrScannerDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet6.xsc">
+      <DependentUpon>QrScannerDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet6.xss">
+      <DependentUpon>QrScannerDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet7.xsc">
+      <DependentUpon>QrScannerDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet7.xss">
+      <DependentUpon>QrScannerDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet8.xsc">
+      <DependentUpon>QrScannerDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet8.xss">
+      <DependentUpon>QrScannerDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet9.xsc">
+      <DependentUpon>QrScannerDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="QrScannerDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QrScannerDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QrScannerDataSet9.xss">
+      <DependentUpon>QrScannerDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="SelectAddressDataSource.xsc">
+      <DependentUpon>SelectAddressDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="SelectAddressDataSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SelectAddressDataSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SelectAddressDataSource.xss">
+      <DependentUpon>SelectAddressDataSource.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>
